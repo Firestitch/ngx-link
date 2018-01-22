@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git@github.com:Firestitch/fs-autolinker.git"
   },
-  "author": "Eugene Kubesh",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@angular/animations": "^5.2.0",
