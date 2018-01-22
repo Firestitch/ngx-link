@@ -2,9 +2,9 @@ import { Directive, ElementRef, EventEmitter, Input, Output, OnInit } from '@ang
 import * as Autolinker from 'autolinker';
 
 @Directive({
-  selector: '[fsAutolinker]'
+  selector: '[fsLinker]'
 })
-export class FsAutolinkerDirective implements OnInit {
+export class FsLinkerDirective implements OnInit {
 
   content = null;
   autolinker = null;
@@ -29,21 +29,21 @@ export class FsAutolinkerDirective implements OnInit {
     className : ''
   }
 
-  @Input() fsAutolinkerConfig = {};
-  @Output() fsAutolinkerOnReplace = new EventEmitter<any>();
+  @Input() fsLinkerConfig = {};
+  @Output() fsLinkerOnReplace = new EventEmitter<any>();
 
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
 
-    this.fsAutolinkerConfig = Object.assign({}, this.defaultConfig, this.fsAutolinkerConfig);
+    this.fsLinkerConfig = Object.assign({}, this.defaultConfig, this.fsLinkerConfig);
 
-    this.fsAutolinkerConfig['replaceFn'] = match => {
-      this.fsAutolinkerOnReplace.emit(match);
+    this.fsLinkerConfig['replaceFn'] = match => {
+      this.fsLinkerOnReplace.emit(match);
     }
 
     this.content = this.elementRef.nativeElement.innerHTML;
-    this.autolinker = new Autolinker(this.fsAutolinkerConfig);
+    this.autolinker = new Autolinker(this.fsLinkerConfig);
     this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.content);
   }
 

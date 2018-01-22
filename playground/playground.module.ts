@@ -3,7 +3,7 @@ import './vendor.scss';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FsAutolinkerModule } from '../src';
+import { FsLinkerModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     // Angular
     BrowserModule,
-    FsAutolinkerModule,
+    FsLinkerModule,
     BrowserAnimationsModule,
   ],
   entryComponents: [

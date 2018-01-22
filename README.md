@@ -1,10 +1,10 @@
-# Fs-Autolinker
+# Fs-Linker
 
 ## How to use
 
 ```bash
-git clone https://github.com/Firestitch/fs-autolinker.git
-cd fs-autolinker
+git clone https://github.com/Firestitch/fs-linker.git
+cd fs-linker
 git submodule init
 git submodule update
 npm install   # Install all deps

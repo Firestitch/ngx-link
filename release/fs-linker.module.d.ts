@@ -1,4 +1,4 @@
 import { ModuleWithProviders } from '@angular/core';
-export declare class FsAutolinkerModule {
+export declare class FsLinkerModule {
     static forRoot(): ModuleWithProviders;
 }

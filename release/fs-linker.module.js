@@ -8,35 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var fs_autolinker_directive_1 = require("./fs-autolinker.directive");
-var FsAutolinkerModule = /** @class */ (function () {
-    function FsAutolinkerModule() {
+var fs_linker_directive_1 = require("./fs-linker.directive");
+var FsLinkerModule = /** @class */ (function () {
+    function FsLinkerModule() {
     }
-    FsAutolinkerModule_1 = FsAutolinkerModule;
-    FsAutolinkerModule.forRoot = function () {
+    FsLinkerModule_1 = FsLinkerModule;
+    FsLinkerModule.forRoot = function () {
         return {
-            ngModule: FsAutolinkerModule_1,
+            ngModule: FsLinkerModule_1,
             providers: []
         };
     };
-    FsAutolinkerModule = FsAutolinkerModule_1 = __decorate([
+    FsLinkerModule = FsLinkerModule_1 = __decorate([
         core_1.NgModule({
             imports: [
                 // Angular
                 common_1.CommonModule,
             ],
             exports: [
-                fs_autolinker_directive_1.FsAutolinkerDirective
+                fs_linker_directive_1.FsLinkerDirective
             ],
             entryComponents: [],
             declarations: [
-                fs_autolinker_directive_1.FsAutolinkerDirective
+                fs_linker_directive_1.FsLinkerDirective
             ],
             providers: [],
         })
-    ], FsAutolinkerModule);
-    return FsAutolinkerModule;
-    var FsAutolinkerModule_1;
+    ], FsLinkerModule);
+    return FsLinkerModule;
+    var FsLinkerModule_1;
 }());
-exports.FsAutolinkerModule = FsAutolinkerModule;
-//# sourceMappingURL=fs-autolinker.module.js.map
+exports.FsLinkerModule = FsLinkerModule;
+//# sourceMappingURL=fs-linker.module.js.map

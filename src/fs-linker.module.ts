@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FsAutolinkerDirective } from './fs-autolinker.directive';
+import { FsLinkerDirective } from './fs-linker.directive';
 
 @NgModule({
   imports: [
@@ -9,20 +9,20 @@ import { FsAutolinkerDirective } from './fs-autolinker.directive';
     CommonModule,
   ],
   exports: [
-    FsAutolinkerDirective
+    FsLinkerDirective
   ],
   entryComponents: [
   ],
   declarations: [
-    FsAutolinkerDirective
+    FsLinkerDirective
   ],
   providers: [
   ],
 })
-export class FsAutolinkerModule {
+export class FsLinkerModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: FsAutolinkerModule,
+      ngModule: FsLinkerModule,
       providers: []
     };
   }

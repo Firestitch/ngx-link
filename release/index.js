@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("@angular/core"), require("@angular/common"));
 	else if(typeof define === 'function' && define.amd)
-		define("@firestitch/fs-autolinker", ["@angular/core", "@angular/common"], factory);
+		define("@firestitch/fs-linker", ["@angular/core", "@angular/common"], factory);
 	else if(typeof exports === 'object')
-		exports["@firestitch/fs-autolinker"] = factory(require("@angular/core"), require("@angular/common"));
+		exports["@firestitch/fs-linker"] = factory(require("@angular/core"), require("@angular/common"));
 	else
-		root["@firestitch/fs-autolinker"] = factory(root["@angular/core"], root["@angular/common"]);
+		root["@firestitch/fs-linker"] = factory(root["@angular/core"], root["@angular/common"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE__angular_core__, __WEBPACK_EXTERNAL_MODULE__angular_common__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -4336,7 +4336,7 @@ return Autolinker;
 
 /***/ }),
 
-/***/ "./fs-autolinker.directive.ts":
+/***/ "./fs-linker.directive.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4353,8 +4353,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
 var Autolinker = __webpack_require__("../node_modules/autolinker/dist/Autolinker.js");
-var FsAutolinkerDirective = /** @class */ (function () {
-    function FsAutolinkerDirective(elementRef) {
+var FsLinkerDirective = /** @class */ (function () {
+    function FsLinkerDirective(elementRef) {
         this.elementRef = elementRef;
         this.content = null;
         this.autolinker = null;
@@ -4377,41 +4377,41 @@ var FsAutolinkerDirective = /** @class */ (function () {
             },
             className: ''
         };
-        this.fsAutolinkerConfig = {};
-        this.fsAutolinkerOnReplace = new core_1.EventEmitter();
+        this.fsLinkerConfig = {};
+        this.fsLinkerOnReplace = new core_1.EventEmitter();
     }
-    FsAutolinkerDirective.prototype.ngOnInit = function () {
+    FsLinkerDirective.prototype.ngOnInit = function () {
         var _this = this;
-        this.fsAutolinkerConfig = Object.assign({}, this.defaultConfig, this.fsAutolinkerConfig);
-        this.fsAutolinkerConfig['replaceFn'] = function (match) {
-            _this.fsAutolinkerOnReplace.emit(match);
+        this.fsLinkerConfig = Object.assign({}, this.defaultConfig, this.fsLinkerConfig);
+        this.fsLinkerConfig['replaceFn'] = function (match) {
+            _this.fsLinkerOnReplace.emit(match);
         };
         this.content = this.elementRef.nativeElement.innerHTML;
-        this.autolinker = new Autolinker(this.fsAutolinkerConfig);
+        this.autolinker = new Autolinker(this.fsLinkerConfig);
         this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.content);
     };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], FsAutolinkerDirective.prototype, "fsAutolinkerConfig", void 0);
+    ], FsLinkerDirective.prototype, "fsLinkerConfig", void 0);
     __decorate([
         core_1.Output(),
         __metadata("design:type", Object)
-    ], FsAutolinkerDirective.prototype, "fsAutolinkerOnReplace", void 0);
-    FsAutolinkerDirective = __decorate([
+    ], FsLinkerDirective.prototype, "fsLinkerOnReplace", void 0);
+    FsLinkerDirective = __decorate([
         core_1.Directive({
-            selector: '[fsAutolinker]'
+            selector: '[fsLinker]'
         }),
         __metadata("design:paramtypes", [core_1.ElementRef])
-    ], FsAutolinkerDirective);
-    return FsAutolinkerDirective;
+    ], FsLinkerDirective);
+    return FsLinkerDirective;
 }());
-exports.FsAutolinkerDirective = FsAutolinkerDirective;
+exports.FsLinkerDirective = FsLinkerDirective;
 
 
 /***/ }),
 
-/***/ "./fs-autolinker.module.ts":
+/***/ "./fs-linker.module.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4425,37 +4425,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
 var common_1 = __webpack_require__("@angular/common");
-var fs_autolinker_directive_1 = __webpack_require__("./fs-autolinker.directive.ts");
-var FsAutolinkerModule = /** @class */ (function () {
-    function FsAutolinkerModule() {
+var fs_linker_directive_1 = __webpack_require__("./fs-linker.directive.ts");
+var FsLinkerModule = /** @class */ (function () {
+    function FsLinkerModule() {
     }
-    FsAutolinkerModule_1 = FsAutolinkerModule;
-    FsAutolinkerModule.forRoot = function () {
+    FsLinkerModule_1 = FsLinkerModule;
+    FsLinkerModule.forRoot = function () {
         return {
-            ngModule: FsAutolinkerModule_1,
+            ngModule: FsLinkerModule_1,
             providers: []
         };
     };
-    FsAutolinkerModule = FsAutolinkerModule_1 = __decorate([
+    FsLinkerModule = FsLinkerModule_1 = __decorate([
         core_1.NgModule({
             imports: [
                 // Angular
                 common_1.CommonModule,
             ],
             exports: [
-                fs_autolinker_directive_1.FsAutolinkerDirective
+                fs_linker_directive_1.FsLinkerDirective
             ],
             entryComponents: [],
             declarations: [
-                fs_autolinker_directive_1.FsAutolinkerDirective
+                fs_linker_directive_1.FsLinkerDirective
             ],
             providers: [],
         })
-    ], FsAutolinkerModule);
-    return FsAutolinkerModule;
-    var FsAutolinkerModule_1;
+    ], FsLinkerModule);
+    return FsLinkerModule;
+    var FsLinkerModule_1;
 }());
-exports.FsAutolinkerModule = FsAutolinkerModule;
+exports.FsLinkerModule = FsLinkerModule;
 
 
 /***/ }),
@@ -4469,8 +4469,8 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__("./fs-autolinker.module.ts"));
-__export(__webpack_require__("./fs-autolinker.directive.ts"));
+__export(__webpack_require__("./fs-linker.module.ts"));
+__export(__webpack_require__("./fs-linker.directive.ts"));
 
 
 /***/ }),

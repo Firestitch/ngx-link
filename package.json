@@ -1,5 +1,5 @@
 {
-  "name": "@firestitch/fs-autolinker",
+  "name": "@firestitch/fs-linker",
   "version": "1.0.0",
   "description": "",
   "main": "release/index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Firestitch/fs-autolinker.git"
+    "url": "git@github.com:Firestitch/fs-linker.git"
   },
   "author": "",
   "license": "ISC",

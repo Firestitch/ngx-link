@@ -1,2 +1,2 @@
-export * from './fs-autolinker.module';
-export * from './fs-autolinker.directive';
+export * from './fs-linker.module';
+export * from './fs-linker.directive';

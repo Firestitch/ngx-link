@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Autolinker = require("autolinker");
-var FsAutolinkerDirective = /** @class */ (function () {
-    function FsAutolinkerDirective(elementRef) {
+var FsLinkerDirective = /** @class */ (function () {
+    function FsLinkerDirective(elementRef) {
         this.elementRef = elementRef;
         this.content = null;
         this.autolinker = null;
@@ -35,34 +35,34 @@ var FsAutolinkerDirective = /** @class */ (function () {
             },
             className: ''
         };
-        this.fsAutolinkerConfig = {};
-        this.fsAutolinkerOnReplace = new core_1.EventEmitter();
+        this.fsLinkerConfig = {};
+        this.fsLinkerOnReplace = new core_1.EventEmitter();
     }
-    FsAutolinkerDirective.prototype.ngOnInit = function () {
+    FsLinkerDirective.prototype.ngOnInit = function () {
         var _this = this;
-        this.fsAutolinkerConfig = Object.assign({}, this.defaultConfig, this.fsAutolinkerConfig);
-        this.fsAutolinkerConfig['replaceFn'] = function (match) {
-            _this.fsAutolinkerOnReplace.emit(match);
+        this.fsLinkerConfig = Object.assign({}, this.defaultConfig, this.fsLinkerConfig);
+        this.fsLinkerConfig['replaceFn'] = function (match) {
+            _this.fsLinkerOnReplace.emit(match);
         };
         this.content = this.elementRef.nativeElement.innerHTML;
-        this.autolinker = new Autolinker(this.fsAutolinkerConfig);
+        this.autolinker = new Autolinker(this.fsLinkerConfig);
         this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.content);
     };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], FsAutolinkerDirective.prototype, "fsAutolinkerConfig", void 0);
+    ], FsLinkerDirective.prototype, "fsLinkerConfig", void 0);
     __decorate([
         core_1.Output(),
         __metadata("design:type", Object)
-    ], FsAutolinkerDirective.prototype, "fsAutolinkerOnReplace", void 0);
-    FsAutolinkerDirective = __decorate([
+    ], FsLinkerDirective.prototype, "fsLinkerOnReplace", void 0);
+    FsLinkerDirective = __decorate([
         core_1.Directive({
-            selector: '[fsAutolinker]'
+            selector: '[fsLinker]'
         }),
         __metadata("design:paramtypes", [core_1.ElementRef])
-    ], FsAutolinkerDirective);
-    return FsAutolinkerDirective;
+    ], FsLinkerDirective);
+    return FsLinkerDirective;
 }());
-exports.FsAutolinkerDirective = FsAutolinkerDirective;
-//# sourceMappingURL=fs-autolinker.directive.js.map
+exports.FsLinkerDirective = FsLinkerDirective;
+//# sourceMappingURL=fs-linker.directive.js.map
