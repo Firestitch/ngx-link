@@ -1,1 +1,1 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./fs-test.module"},{"from":"./fs-test-component"},{"from":"./fs-test.service"}]}]
+[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./fs-autolinker.module"},{"from":"./fs-autolinker.directive"}]}]

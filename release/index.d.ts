@@ -1,3 +1,2 @@
-export * from './fs-test.module';
-export * from './fs-test-component';
-export * from './fs-test.service';
+export * from './fs-autolinker.module';
+export * from './fs-autolinker.directive';
