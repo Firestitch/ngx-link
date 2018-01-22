@@ -1,0 +1,71 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @mendor1990
+ Sign out
+ Unwatch 5
+  Star 1  Fork 0 Firestitch/fs-playground
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+Branch: master Find file Copy pathfs-playground/.gitignore
+d42bf0d  5 days ago
+ Evgeniy Kubesh craeted test playground
+0 contributors
+RawBlameHistory     
+42 lines (33 sloc)  366 Bytes
+# Node
+node_modules/*
+npm-debug.log
+
+# TypeScript
+src/*.js
+src/*.map
+src/*.d.ts
+
+# JetBrains
+.idea
+.project
+.settings
+.idea/*
+*.iml
+
+# VS Code
+.vscode/*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+**/.DS_Store
+
+# Ngc generated files
+**/*.ngfactory.ts
+
+# Build files
+dist/*
+
+# Playground tmp files
+.playground
+/.tmp
+/build
+/dist
+/node_modules
+/.playground
+/dll
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
