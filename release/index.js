@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("@angular/core"), require("@angular/common"));
 	else if(typeof define === 'function' && define.amd)
-		define("@firestitch/fs-linker", ["@angular/core", "@angular/common"], factory);
+		define("@firestitch/linker", ["@angular/core", "@angular/common"], factory);
 	else if(typeof exports === 'object')
-		exports["@firestitch/fs-linker"] = factory(require("@angular/core"), require("@angular/common"));
+		exports["@firestitch/linker"] = factory(require("@angular/core"), require("@angular/common"));
 	else
-		root["@firestitch/fs-linker"] = factory(root["@angular/core"], root["@angular/common"]);
+		root["@firestitch/linker"] = factory(root["@angular/core"], root["@angular/common"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE__angular_core__, __WEBPACK_EXTERNAL_MODULE__angular_common__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

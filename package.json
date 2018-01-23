@@ -1,5 +1,5 @@
 {
-  "name": "@firestitch/fs-linker",
+  "name": "@firestitch/linker",
   "version": "1.0.1",
   "description": "",
   "main": "release/index.js",
