@@ -1,12 +1,11 @@
-import { Directive, ElementRef, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, Output, OnChanges } from '@angular/core';
 import * as Autolinker from 'autolinker';
 
 @Directive({
   selector: '[fsLinker]'
 })
-export class FsLinkerDirective implements OnInit {
+export class FsLinkerDirective implements OnChanges {
 
-  content = null;
   autolinker = null;
   defaultConfig = {
     urls : {
@@ -29,22 +28,28 @@ export class FsLinkerDirective implements OnInit {
     className : ''
   }
 
+  @Input() fsLinker = null;
   @Input() fsLinkerConfig = {};
   @Output() fsLinkerOnReplace = new EventEmitter<any>();
 
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.link();
+  }
+
+  link() {
+    if (!this.fsLinker) {
+      this.elementRef.nativeElement.innerHTML = '';
+      return;
+    }
 
     this.fsLinkerConfig = Object.assign({}, this.defaultConfig, this.fsLinkerConfig);
-
+    this.autolinker = new Autolinker(this.fsLinkerConfig);
+    this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.fsLinker);
     this.fsLinkerConfig['replaceFn'] = match => {
       this.fsLinkerOnReplace.emit(match);
     }
-
-    this.content = this.elementRef.nativeElement.innerHTML;
-    this.autolinker = new Autolinker(this.fsLinkerConfig);
-    this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.content);
   }
 
 }

@@ -14,7 +14,6 @@ var Autolinker = require("autolinker");
 var FsLinkerDirective = /** @class */ (function () {
     function FsLinkerDirective(elementRef) {
         this.elementRef = elementRef;
-        this.content = null;
         this.autolinker = null;
         this.defaultConfig = {
             urls: {
@@ -35,19 +34,30 @@ var FsLinkerDirective = /** @class */ (function () {
             },
             className: ''
         };
+        this.fsLinker = null;
         this.fsLinkerConfig = {};
         this.fsLinkerOnReplace = new core_1.EventEmitter();
     }
-    FsLinkerDirective.prototype.ngOnInit = function () {
+    FsLinkerDirective.prototype.ngOnChanges = function () {
+        this.link();
+    };
+    FsLinkerDirective.prototype.link = function () {
         var _this = this;
+        if (!this.fsLinker) {
+            this.elementRef.nativeElement.innerHTML = '';
+            return;
+        }
         this.fsLinkerConfig = Object.assign({}, this.defaultConfig, this.fsLinkerConfig);
+        this.autolinker = new Autolinker(this.fsLinkerConfig);
+        this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.fsLinker);
         this.fsLinkerConfig['replaceFn'] = function (match) {
             _this.fsLinkerOnReplace.emit(match);
         };
-        this.content = this.elementRef.nativeElement.innerHTML;
-        this.autolinker = new Autolinker(this.fsLinkerConfig);
-        this.elementRef.nativeElement.innerHTML = this.autolinker.link(this.content);
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], FsLinkerDirective.prototype, "fsLinker", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)

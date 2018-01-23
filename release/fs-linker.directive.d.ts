@@ -1,7 +1,6 @@
-import { ElementRef, EventEmitter, OnInit } from '@angular/core';
-export declare class FsLinkerDirective implements OnInit {
+import { ElementRef, EventEmitter, OnChanges } from '@angular/core';
+export declare class FsLinkerDirective implements OnChanges {
     private elementRef;
-    content: any;
     autolinker: any;
     defaultConfig: {
         urls: {
@@ -22,8 +21,10 @@ export declare class FsLinkerDirective implements OnInit {
         };
         className: string;
     };
+    fsLinker: any;
     fsLinkerConfig: {};
     fsLinkerOnReplace: EventEmitter<any>;
     constructor(elementRef: ElementRef);
-    ngOnInit(): void;
+    ngOnChanges(): void;
+    link(): void;
 }

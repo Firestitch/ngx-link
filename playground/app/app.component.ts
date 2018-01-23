@@ -7,11 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  content = 'http://google.com';
+
   constructor() {
   }
 
   replace(data) {
-    console.log(data);
+    console.log('replaced', data);
   }
 
 }
