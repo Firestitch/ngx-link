@@ -1,10 +1,10 @@
 {
-  "name": "@firestitch/linker",
-  "description": "@firestitch/linker",
+  "name": "@firestitch/link",
+  "description": "@firestitch/link",
   "version": "1.0.9",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Firestitch/fs-linker"
+    "url": "https://github.com/Firestitch/fs-link"
   },
   "author": {
     "name": "Firestitch",
@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Firestitch/fs-linker/issues"
+    "url": "https://github.com/Firestitch/fs-link/issues"
   },
   "main": "package/index.js",
   "typings": "package/index.d.ts",
