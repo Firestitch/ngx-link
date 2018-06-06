@@ -4,17 +4,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FsLinkerModule } from '../src';
+import { FsLinkModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app/material.module';
-import { FirstExampleComponent } from './app/components/first-example/first-example.component';
 import { FsExampleModule } from '@firestitch/example';
+import { FirstExampleComponent } from './app/components/first-example/first-example.component';
+import { NewComponent } from './app/components/new/new.component';
+import { BasicComponent } from './app/components/basic/basic.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsLinkerModule,
+    FsLinkModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
@@ -24,7 +26,9 @@ import { FsExampleModule } from '@firestitch/example';
   ],
   declarations: [
     AppComponent,
-    FirstExampleComponent
+    FirstExampleComponent,
+    BasicComponent,
+    NewComponent
   ],
   providers: [
   ],

@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FsLinkerDirective } from './fs-linker.directive';
+import { FsLinkDirective } from './fs-link.directive';
 
 @NgModule({
   imports: [
@@ -9,20 +9,20 @@ import { FsLinkerDirective } from './fs-linker.directive';
     CommonModule,
   ],
   exports: [
-    FsLinkerDirective
+    FsLinkDirective
   ],
   entryComponents: [
   ],
   declarations: [
-    FsLinkerDirective
+    FsLinkDirective
   ],
   providers: [
   ],
 })
-export class FsLinkerModule {
+export class FsLinkModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: FsLinkerModule,
+      ngModule: FsLinkModule,
       providers: []
     };
   }
