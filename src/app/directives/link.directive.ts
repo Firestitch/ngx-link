@@ -38,7 +38,7 @@ export class FsLinkDirective implements OnChanges {
           location : 'end'
       },
       className : ''
-    }
+    };
 
     if (!this.fsLink) {
       this.elementRef.nativeElement.innerHTML = '';
