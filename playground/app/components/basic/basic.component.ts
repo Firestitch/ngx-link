@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
 })
 export class BasicComponent {
 
-  public url = 'www.zombo.com';
+  public content = 'www.zombo.com';
 }

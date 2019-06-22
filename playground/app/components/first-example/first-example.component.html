@@ -1,6 +1,2 @@
-<span [fsLink]="content" (replace)="replace($event)"></span>
-<p>
-  <button mat-raised-button (click)="facebook()">Facebook</button>
-  <button mat-raised-button (click)="google()">Google</button>
-</p>
+<span fsLink (replace)="replace($event)" [openWindow]="true">{{content}}</span>
 
