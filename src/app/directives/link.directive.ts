@@ -23,7 +23,7 @@ export class FsLinkDirective implements AfterViewInit {
     if (this._el.tagName === 'A') {
 
       if (this.httpPrefix) {
-        let href = this._el.attributes.getNamedItem('href');
+        const href = this._el.attributes.getNamedItem('href');
 
         if (href && !href.value.match(/^http/i)) {
           href.value = 'http://' + href.value;
@@ -45,13 +45,19 @@ export class FsLinkDirective implements AfterViewInit {
 
   clickOpenWindow(el, e) {
 
-    let href = el.attributes.getNamedItem('href');
+    const href = el.attributes.getNamedItem('href');
 
     if (href && !href.value.match(/^(mailto:|tel:|maps:)/i)) {
 
       e.preventDefault();
+
       // _system supports desktop as well as cordova
-      window.open(href.value, '_system');
+      if ((window as any).cordova && (window as any).cordova.InAppBrowser) {
+        (window as any).cordova.InAppBrowser.open(href.value, '_system');
+      } else {
+        window.open(href.value, '_system');
+      }
+
     }
   }
 
