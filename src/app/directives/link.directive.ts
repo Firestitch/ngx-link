@@ -1,5 +1,6 @@
-import { Directive, ElementRef, EventEmitter, Input, Output, OnChanges, AfterViewInit } from '@angular/core';
-import * as Autolinker from 'autolinker';
+import { Directive, ElementRef, EventEmitter, Input, Output, AfterViewInit } from '@angular/core';
+import Autolinker from 'autolinker';
+
 
 @Directive({
   selector: '[fsLink]'
