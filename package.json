@@ -51,7 +51,7 @@
     "@firestitch/iframe": "^12.0.0",
     "@firestitch/menu": "^12.0.1",
     "@firestitch/message": "^12.0.0",
-    "autolinker": "^1.6.2",
+    "autolinker": "^4.0.0",
     "codelyzer": "^6.0.0",
     "cpx": "^1.5.0",
     "hammerjs": "^2.0.8",

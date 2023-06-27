@@ -1,9 +1,9 @@
 import { Directive, ElementRef, EventEmitter, Input, Output, AfterViewInit } from '@angular/core';
-import Autolinker from 'autolinker';
+import { Autolinker, AutolinkerConfig } from 'autolinker';
 
 
 @Directive({
-  selector: '[fsLink]'
+  selector: '[fsLink]',
 })
 export class FsLinkDirective implements AfterViewInit {
 
@@ -19,10 +19,8 @@ export class FsLinkDirective implements AfterViewInit {
     this._el = this.elementRef.nativeElement;
   }
 
-  ngAfterViewInit() {
-
+  public ngAfterViewInit(): void {
     if (this._el.tagName === 'A') {
-
       if (this.httpPrefix) {
         const href = this._el.attributes.getNamedItem('href');
 
@@ -44,7 +42,7 @@ export class FsLinkDirective implements AfterViewInit {
     }
   }
 
-  clickOpenWindow(el, e) {
+  public clickOpenWindow(el, e) {
 
     const href = el.attributes.getNamedItem('href');
 
@@ -62,26 +60,24 @@ export class FsLinkDirective implements AfterViewInit {
     }
   }
 
-  linkify() {
-
-    const config = {
-      urls : {
-          schemeMatches : true,
-          wwwMatches    : true,
-          tldMatches    : true
+  public linkify() {
+    const config: AutolinkerConfig = {
+      urls: {
+        schemeMatches: true,
+        tldMatches: true
       },
-      email       : true,
-      phone       : true,
-      mention     : false,
-      hashtag     : false,
-      stripPrefix : true,
+      email: true,
+      phone: true,
+      mention: false,
+      hashtag: false,
+      stripPrefix: true,
       stripTrailingSlash : true,
       newWindow: this.newWindow,
-      truncate : {
-          length   : 0,
-          location : 'end'
+      truncate: {
+        length  : 0,
+        location: 'end'
       },
-      className : '',
+      className: '',
       replaceFn: () => {
         this.replaced.emit();
       }
