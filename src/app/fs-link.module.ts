@@ -4,20 +4,17 @@ import { CommonModule } from '@angular/common';
 import { FsLinkDirective } from './directives/link.directive';
 
 @NgModule({
-  imports: [
-    // Angular
-    CommonModule,
-  ],
-  exports: [
-    FsLinkDirective
-  ],
-  entryComponents: [
-  ],
-  declarations: [
-    FsLinkDirective
-  ],
-  providers: [
-  ],
+    imports: [
+        // Angular
+        CommonModule,
+    ],
+    exports: [
+        FsLinkDirective
+    ],
+    declarations: [
+        FsLinkDirective
+    ],
+    providers: []
 })
 export class FsLinkModule {
   // static forRoot(): ModuleWithProviders {

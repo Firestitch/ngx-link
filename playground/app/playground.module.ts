@@ -16,26 +16,23 @@ import { NewComponent } from './components/new/new.component';
 
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    FsLinkModule,
-    BrowserAnimationsModule,
-    AppMaterialModule,
-    FormsModule,
-    FsExampleModule.forRoot(),
-    FsMessageModule.forRoot(),
-  ],
-  entryComponents: [
-  ],
-  declarations: [
-    AppComponent,
-    FirstExampleComponent,
-    BasicComponent,
-    NewComponent
-  ],
-  providers: [
-  ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FsLinkModule,
+        BrowserAnimationsModule,
+        AppMaterialModule,
+        FormsModule,
+        FsExampleModule.forRoot(),
+        FsMessageModule.forRoot(),
+    ],
+    declarations: [
+        AppComponent,
+        FirstExampleComponent,
+        BasicComponent,
+        NewComponent
+    ],
+    providers: []
 })
 export class PlaygroundModule {
 }
