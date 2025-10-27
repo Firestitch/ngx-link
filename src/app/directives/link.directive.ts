@@ -3,7 +3,8 @@ import { Autolinker, AutolinkerConfig } from 'autolinker';
 
 
 @Directive({
-  selector: '[fsLink]',
+    selector: '[fsLink]',
+    standalone: true,
 })
 export class FsLinkDirective implements AfterViewInit {
 

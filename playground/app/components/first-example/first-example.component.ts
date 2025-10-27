@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FsLinkDirective } from '../../../../src/app/directives/link.directive';
 
 @Component({
-  selector: 'first-example',
-  templateUrl: 'first-example.component.html',
-  styleUrls: [ 'first-example.component.css' ]
+    selector: 'first-example',
+    templateUrl: 'first-example.component.html',
+    styleUrls: ['first-example.component.css'],
+    standalone: true,
+    imports: [FsLinkDirective]
 })
 export class FirstExampleComponent {
 
