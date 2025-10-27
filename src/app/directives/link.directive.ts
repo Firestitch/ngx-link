@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, Input, Output, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Input, Output, AfterViewInit, inject } from '@angular/core';
 import { Autolinker, AutolinkerConfig } from 'autolinker';
 
 
@@ -7,6 +7,8 @@ import { Autolinker, AutolinkerConfig } from 'autolinker';
     standalone: true,
 })
 export class FsLinkDirective implements AfterViewInit {
+  private elementRef = inject(ElementRef);
+
 
   private _autolinker = null;
   private _el: Element;
@@ -16,7 +18,7 @@ export class FsLinkDirective implements AfterViewInit {
   @Input() openWindow = false;
   @Output() replaced = new EventEmitter<any>();
 
-  constructor(private elementRef: ElementRef) {
+  constructor() {
     this._el = this.elementRef.nativeElement;
   }
 
